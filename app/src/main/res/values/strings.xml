@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">GitHubTool</string>
+    <string name="enter_username_to_search_on_github">Enter username to search on github</string>
+    <string name="search">Search</string>
+    <string name="user_repositories">User repositories:</string>
+    <string name="avatar_of_the_github_user">Avatar of the github user</string>
+    <string name="open_link">Open link</string>
+    <string name="download_repo">Download Repo</string>
+    <string name="downloaded_repos">Downloaded Repos</string>
+    <string name="github_tool_logo">Github tool logo</string>
+    <string name="repo_name">Repo Name</string>
+    <string name="owner_name">Owner Name</string>
+    <string name="cant_handle_this">Can\'t handle this!</string>
+    <string name="unknown_user">Unknown user</string>
+    <string name="repo_data_saved">The repo data has been saved to the database</string>
+
+</resources>
