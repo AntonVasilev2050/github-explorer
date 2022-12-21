@@ -7,7 +7,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.viewModelScope
@@ -32,7 +32,7 @@ class ReposActivity : AppCompatActivity() {
     }
     private lateinit var repoAdapter: RepoAdapter
     private lateinit var ownerRepo: OwnerRepo
-    private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+    private val startForResult = registerForActivityResult(StartActivityForResult()){
     val ownerName = ownerRepo.owner.login
     val repoName = ownerRepo.name
     val loadedRepo = LoadedRepo(null, ownerName.toString(), repoName)
