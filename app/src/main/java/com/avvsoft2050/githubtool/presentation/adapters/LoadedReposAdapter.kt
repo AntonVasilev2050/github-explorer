@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.avvsoft2050.githubtool.data.db.entity.LoadedRepo
+import com.avvsoft2050.githubtool.domain.entity.LoadedRepo
 import com.avvsoft2050.githubtool.databinding.ItemLoadedRepoBinding
 
 class LoadedReposAdapter(

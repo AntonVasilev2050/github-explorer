@@ -32,8 +32,7 @@ class LoadedReposActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val clickedItem = item.itemId
-        when (clickedItem) {
+        when (item.itemId) {
             android.R.id.home -> {
                 finish()
                 return true

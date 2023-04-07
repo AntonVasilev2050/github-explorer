@@ -12,8 +12,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.viewModelScope
 import com.avvsoft2050.githubtool.R
-import com.avvsoft2050.githubtool.data.db.entity.LoadedRepo
-import com.avvsoft2050.githubtool.data.model.OwnerRepo
+import com.avvsoft2050.githubtool.domain.entity.LoadedRepo
+import com.avvsoft2050.githubtool.domain.model.OwnerRepo
 import com.avvsoft2050.githubtool.databinding.ActivityReposBinding
 import com.avvsoft2050.githubtool.databinding.DialogRepoDetailsBinding
 import com.avvsoft2050.githubtool.di.ReposApplication
@@ -129,8 +129,7 @@ class ReposActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val clickedItem = item.itemId
-        when(clickedItem){
+        when(item.itemId){
             R.id.action_show_downloaded_repos -> {
                 val intent = Intent(this, LoadedReposActivity::class.java)
                 startActivity(intent)

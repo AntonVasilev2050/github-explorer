@@ -1,4 +1,4 @@
-package com.avvsoft2050.githubtool.data.db.entity
+package com.avvsoft2050.githubtool.domain.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

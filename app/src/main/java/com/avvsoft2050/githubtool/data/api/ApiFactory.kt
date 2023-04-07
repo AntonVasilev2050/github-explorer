@@ -1,5 +1,7 @@
 package com.avvsoft2050.githubtool.data.api
 
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -7,11 +9,18 @@ object ApiFactory {
 
     private const val BASE_URL = "https://api.github.com/"
 
-    private val retrofit = Retrofit.Builder()
-        .addConverterFactory(GsonConverterFactory.create())
-//        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .baseUrl(BASE_URL)
-        .build()
+    fun create(): ApiService {
+        val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
 
-    val apiService: ApiService = retrofit.create(ApiService::class.java)
+        val client = OkHttpClient.Builder()
+            .addInterceptor(logger)
+            .build()
+
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(ApiService::class.java)
+    }
 }

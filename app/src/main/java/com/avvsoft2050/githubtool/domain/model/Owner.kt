@@ -1,4 +1,4 @@
-package com.avvsoft2050.githubtool.data.model
+package com.avvsoft2050.githubtool.domain.model
 
 import com.google.gson.annotations.Expose
 

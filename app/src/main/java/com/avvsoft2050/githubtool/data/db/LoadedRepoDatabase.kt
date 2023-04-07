@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.avvsoft2050.githubtool.data.db.dao.LoadedRepoDao
-import com.avvsoft2050.githubtool.data.db.entity.LoadedRepo
+import com.avvsoft2050.githubtool.domain.entity.LoadedRepo
 
 @Database(entities = arrayOf(LoadedRepo::class), version = 1, exportSchema = false)
 abstract class LoadedRepoDatabase : RoomDatabase() {

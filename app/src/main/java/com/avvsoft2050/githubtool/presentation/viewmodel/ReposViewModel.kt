@@ -2,9 +2,9 @@ package com.avvsoft2050.githubtool.presentation.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.*
-import com.avvsoft2050.githubtool.data.db.entity.LoadedRepo
+import com.avvsoft2050.githubtool.domain.entity.LoadedRepo
 import com.avvsoft2050.githubtool.domain.repository.ReposRepository
-import com.avvsoft2050.githubtool.data.model.OwnerRepo
+import com.avvsoft2050.githubtool.domain.model.OwnerRepo
 import kotlinx.coroutines.*
 
 class ReposViewModel(
@@ -18,26 +18,28 @@ class ReposViewModel(
     private val _infoMessageLiveData = MutableLiveData(infoMessage)
     val infoMessageLiveData: LiveData<String> get() = _infoMessageLiveData
 
+    val allLoadedRepos: LiveData<List<LoadedRepo>> = repository.allLoadedRepos.asLiveData()
     suspend fun onSearchButtonClicked(user: String) {
         infoMessage = ""
         val result = viewModelScope.launch {
             try {
                 repoList = repository.getUserRepos(user)
+                _repoListLiveData.value = repoList
                 infoMessage = "Data loaded"
+                _infoMessageLiveData.value = infoMessage
             } catch (e: Exception) {
                 infoMessage = e.message.toString()
                 Log.d("TEST_OF_LOADING_DATA", "Error: ${e.message.toString()}")
             }
 
         }
-        result.join()
-        if (_repoListLiveData.value != repoList) {
-            _repoListLiveData.value = repoList
-        }
-        _infoMessageLiveData.value = infoMessage
+//        result.join()
+//        if (_repoListLiveData.value != repoList) {
+//            _repoListLiveData.value = repoList
+//        }
+//        _infoMessageLiveData.value = infoMessage
     }
 
-    val allLoadedRepos: LiveData<List<LoadedRepo>> = repository.allLoadedRepos.asLiveData()
 
     fun insert(loadedRepo: LoadedRepo) = viewModelScope.launch {
         repository.insert(loadedRepo)

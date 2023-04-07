@@ -1,6 +1,6 @@
 package com.avvsoft2050.githubtool.data.api
 
-import com.avvsoft2050.githubtool.data.model.OwnerRepo
+import com.avvsoft2050.githubtool.domain.model.OwnerRepo
 import retrofit2.http.GET
 import retrofit2.http.Path
 

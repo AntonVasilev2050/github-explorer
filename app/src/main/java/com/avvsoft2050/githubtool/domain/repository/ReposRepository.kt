@@ -1,8 +1,8 @@
 package com.avvsoft2050.githubtool.domain.repository
 
 import androidx.annotation.WorkerThread
-import com.avvsoft2050.githubtool.data.db.entity.LoadedRepo
-import com.avvsoft2050.githubtool.data.model.OwnerRepo
+import com.avvsoft2050.githubtool.domain.entity.LoadedRepo
+import com.avvsoft2050.githubtool.domain.model.OwnerRepo
 import kotlinx.coroutines.flow.Flow
 
 interface ReposRepository {

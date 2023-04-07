@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.avvsoft2050.githubtool.data.db.entity.LoadedRepo
+import com.avvsoft2050.githubtool.domain.entity.LoadedRepo
 import kotlinx.coroutines.flow.Flow
 
 @Dao
